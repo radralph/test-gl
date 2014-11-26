@@ -177,6 +177,21 @@ describe 'CHARGING API' do
 			expect(err_bp('referenceCode')).to eq('Missing parameters: referenceCode')
 		end
 	end
+
+	context 'Invalid reference code format' do
+		it 'Error: Invalid Reference code' do
+		end
+	end
+
+	context 'Invalid reference code length' do
+		it 'Error: Invalid reference code length' do
+		end
+	end
+
+	context 'App not provisioned for this rate' do
+		it 'App is not provisioned for this rate' do
+		end
+	end
 end
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
