@@ -192,6 +192,12 @@ describe 'CHARGING API' do
 		it 'App is not provisioned for this rate' do
 		end
 	end
+
+	context 'Invalid Token' do
+		it 'Invalid Token' do
+		end
+	end
+
 end
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
