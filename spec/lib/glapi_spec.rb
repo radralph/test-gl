@@ -198,6 +198,11 @@ describe 'CHARGING API' do
 		end
 	end
 
+	context 'Succesful Charging [token]' do
+		it 'responds with code 201' do
+		end
+	end
+
 end
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
