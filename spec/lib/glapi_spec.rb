@@ -203,6 +203,17 @@ describe 'CHARGING API' do
 		end
 	end
 
+	context 'Insufficient balance [bp]' do
+		it 'GHP subscriber has insufficient balance' do
+		end
+	end
+
+	context 'Insufficient balance [tm]' do
+		it 'TM subscriber has insufficient balance' do
+		end
+	end	
+
+
 end
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
