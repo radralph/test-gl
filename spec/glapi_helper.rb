@@ -43,7 +43,7 @@ def pushSms(param)
 		$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
 		$uri.query = "access_token=#{$accessToken}"
 	end
-	Net::https.post_form($uri, {'address' => $address, 'message' => $message})
+	Net::HTTP.post_form($uri, {'address' => $address, 'message' => $message})
 end
 
 def pushSms_bp(param)
@@ -59,7 +59,7 @@ def pushSms_bp(param)
 		$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
 		$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 	end
-	Net::https.post_form($uriBp, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})	
+	Net::HTTP.post_form($uriBp, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})	
 end
 
 def xTelco(param)
@@ -77,7 +77,7 @@ def xTelco(param)
 		$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
 		$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 	end
-	Net::https.post_form($uriBp, {'address' => $smart, 'message' => $message, 'passphrase' => $passphrase})
+	Net::HTTP.post_form($uriBp, {'address' => $smart, 'message' => $message, 'passphrase' => $passphrase})
 end
 
 
@@ -86,24 +86,24 @@ def err(param)
 	case param
 	when 'invalidToken'
 		uri = $uri ; uri.query = "access_token=A11Y0uRb@$3RBe1onG2Us"
-		response = Net::https.post_form(uri, {'address' => $address, 'message' => $message})
+		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message})
 	when 'token'
 		uri = $uri ; uri.query = ""
-		response = Net::https.post_form(uri, {'address' => $address, 'message' => $message})	
+		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message})	
 	when 'address'
 		uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests") ; uri.query = "access_token=#{$accessToken}"
-		response = Net::https.post_form(uri, {'message' => $message})	
+		response = Net::HTTP.post_form(uri, {'message' => $message})	
 	when 'message'
 		uri = $uri ; uri.query = "access_token=#{$accessToken}"
-		response = Net::https.post_form($uri, {'address' => $address}) 
+		response = Net::HTTP.post_form($uri, {'address' => $address}) 
 	when 'invalidSub'
-		response = Net::https.post_form($uri, {'address' => 9062058446, 'message' => $message})
+		response = Net::HTTP.post_form($uri, {'address' => 9062058446, 'message' => $message})
 	when 'nil_message'
-		response = Net::https.post_form($uri, {'address' => $address, 'message' => ''})
+		response = Net::HTTP.post_form($uri, {'address' => $address, 'message' => ''})
 	when 'extended_err'
 		uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/711712345678/requests")
 		uri.query = $uri.query
-		response = Net::https.post_form(uri, {'address' => $address, 'message' => $message})
+		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message})
 	end
 	parseBody(response) 
 end
@@ -112,29 +112,29 @@ def err_bp(param)
 	case param
 	when 'invalidIdSecret'
 		uri = $uri ; uri.query = "app_id=A11Y0uRb@$3&app_secret=RBe1onG2Us"
-		response = Net::https.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})
+		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})
 	when 'idSecret'
 		uri = $uri ; uri.query = ""
-		response = Net::https.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})	
+		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})	
 	when 'address'
-		response = Net::https.post_form($uri, {'message' => $message, 'passphrase' => $passphrase})	
+		response = Net::HTTP.post_form($uri, {'message' => $message, 'passphrase' => $passphrase})	
 	when 'message'
-		response = Net::https.post_form($uri, {'address' => $address, 'passphrase' => $passphrase}) 
+		response = Net::HTTP.post_form($uri, {'address' => $address, 'passphrase' => $passphrase}) 
 	when 'nil_message'
 		uri = $uriBp ; uri.query = $uriBp.query
-		response = Net::https.post_form(uri, {'address' => $address, 'message' => '', 'passphrase' => $passphrase}) 
+		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => '', 'passphrase' => $passphrase}) 
 	when 'extended_err'
 		uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/711712345678/requests")
 		uri.query = $uri.query
-		response = Net::https.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})
+		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})
 	when 'endUserId'
-		response = Net::https.post_form($uricBp, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => $increment,
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => $increment,
 		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	when 'amount'
-		response = Net::https.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
 		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	when 'referenceCode'
-		response = Net::https.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
 		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	end
 	parseBody(response) 
@@ -145,7 +145,7 @@ def charge(param)
 	when 'ok'
 		#filler 
 	end
-	Net::https.post_form($uric, {'description' => 'desc',
+	Net::HTTP.post_form($uric, {'description' => 'desc',
 		    'endUserId' => $address, 'amount' => "0.00", 'referenceCode' => $increment1,
 		      'transactionOperationStatus' => 'charged'})
 end
@@ -155,7 +155,7 @@ def charge_bp(param)
 	when 'ok'
 		#filler 
 	end	
-	Net::https.post_form($uricBp, {'description' => 'desc',
+	Net::HTTP.post_form($uricBp, {'description' => 'desc',
 		    'endUserId' => $address, 'amount' => "0.00", 'referenceCode' => $increment2,
 		      'transactionOperationStatus' => 'charged', 'passphrase' => $passphrase})
 end
