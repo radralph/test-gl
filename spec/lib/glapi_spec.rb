@@ -213,6 +213,11 @@ describe 'CHARGING API' do
 		end
 	end	
 
+		context 'charging to xtelco' do
+		it '401 error' do
+		end
+	end	
+
 
 end
 
