@@ -3,7 +3,7 @@ require 'glapi_helper'
 
 describe 'SMS API [normal app]' do	
 
-	context 'Complete and Correct request parameters' do
+	context 'Complete and Correct request parameters', :focus => true do
 		#it should deduct 0.50 to developer's wallet
 		it 'responds with code 201' do
 			expect(pushSms('ok').code).to eq('201')
@@ -180,6 +180,7 @@ describe 'CHARGING API' do
 
 	context 'Invalid reference code format' do
 		it 'Error: Invalid Reference code' do
+			expect(err_bp('chargingLength')).to eq('Invalid referenceCode length')
 		end
 	end
 

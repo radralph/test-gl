@@ -1,4 +1,4 @@
-require 'net/https'
+require 'net/http'
 require 'json'
 require 'open-uri'
 
@@ -7,22 +7,22 @@ require 'open-uri'
 	$address = "9175744034"
   	$message = "TEST"
 ##SMS Normal APP
-	$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests")
+	$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests")
   	$uri.query = "access_token=#{$accessToken}"
 ##SMS Bypassed App
-  	$uriBp = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/3822/requests")
+  	$uriBp = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/3822/requests")
   	$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 ##Charging Normal APP
-    content = open('https://devapi.globelabs.com.ph/payments/548').read
+    content = open('http://devapi.globelabs.com.ph/payments/548').read
 	json = JSON.parse(content)
 	$increment1 = json['result'].last['reference_code'].to_i+1
-	$uric = URI.parse("https://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
+	$uric = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
 	$uric.query = "access_token=#{$access_token}"
 ##Charging Bypassed APP
-    content = open('https://devapi.globelabs.com.ph/payments/251').read
+    content = open('http://devapi.globelabs.com.ph/payments/251').read
 	json = JSON.parse(content)
 	$increment2 = json['result'].last['reference_code'].to_i+1
-	$uricBp = URI.parse("https://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
+	$uricBp = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
 	$uricBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 ##xTelco
 	$smart = "9213151819"
@@ -37,10 +37,10 @@ def pushSms(param)
 	when 'sms320'
 		$message = ("A" * 320) + ("B" * 10)
 	when 'prefix' 
-		$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21587117/requests")
+		$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21587117/requests")
 		$uri.query = "access_token=#{$accessToken}"
 	when 'extended'
-		$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
+		$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
 		$uri.query = "access_token=#{$accessToken}"
 	end
 	Net::HTTP.post_form($uri, {'address' => $address, 'message' => $message})
@@ -53,10 +53,10 @@ def pushSms_bp(param)
 	when 'sms320'
 		$message = ("A" * 320) + ("B" * 10)
 	when 'prefix' 
-		$uriBp = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21587117/requests")
+		$uriBp = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21587117/requests")
 		$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 	when 'extended'
-		$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
+		$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
 		$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 	end
 	Net::HTTP.post_form($uriBp, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})	
@@ -71,10 +71,10 @@ def xTelco(param)
 	when 'sms320'
 		$message = ("A" * 320) + ("B" * 10)
 	when 'prefix' 
-		$uriBp = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21587117/requests")
+		$uriBp = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21587117/requests")
 		$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 	when 'extended'
-		$uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
+		$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/215871171234567/requests")
 		$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 	end
 	Net::HTTP.post_form($uriBp, {'address' => $smart, 'message' => $message, 'passphrase' => $passphrase})
@@ -91,7 +91,7 @@ def err(param)
 		uri = $uri ; uri.query = ""
 		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message})	
 	when 'address'
-		uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests") ; uri.query = "access_token=#{$accessToken}"
+		uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests") ; uri.query = "access_token=#{$accessToken}"
 		response = Net::HTTP.post_form(uri, {'message' => $message})	
 	when 'message'
 		uri = $uri ; uri.query = "access_token=#{$accessToken}"
@@ -101,9 +101,14 @@ def err(param)
 	when 'nil_message'
 		response = Net::HTTP.post_form($uri, {'address' => $address, 'message' => ''})
 	when 'extended_err'
-		uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/711712345678/requests")
+		uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/711712345678/requests")
 		uri.query = $uri.query
 		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message})
+	
+	###new tests
+	when 'chargingLength'
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => 3822100000000001,
+	      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	end
 	parseBody(response) 
 end
@@ -124,7 +129,7 @@ def err_bp(param)
 		uri = $uriBp ; uri.query = $uriBp.query
 		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => '', 'passphrase' => $passphrase}) 
 	when 'extended_err'
-		uri = URI.parse("https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/711712345678/requests")
+		uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/711712345678/requests")
 		uri.query = $uri.query
 		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})
 	when 'endUserId'
