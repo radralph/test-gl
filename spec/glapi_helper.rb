@@ -141,6 +141,9 @@ def err_bp(param)
 	when 'referenceCode'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
 		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+	when 'invalidRate'
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
+		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	end
 	parseBody(response) 
 end
