@@ -143,11 +143,13 @@ def err_bp(param)
 		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	when 'invalidRate'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
-		      'transactionOperationStatus' => 'charged', 'passphrase' => ''})
+		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	when 'chargingLength'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
-		      'transactionOperationStatus' => 'charged', 'passphrase' => ''})
-	
+		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+	when 'chargingFormat'
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
+		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
 	end
 	parseBody(response) 
 end

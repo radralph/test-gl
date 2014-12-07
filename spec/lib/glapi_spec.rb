@@ -180,12 +180,13 @@ describe 'CHARGING API' do
 
 	context 'Invalid reference code format' do
 		it 'Error: Invalid Reference code' do
-			expect(err_bp('chargingLength')).to eq('Invalid referenceCode length')
+			expect(err_bp('chargingFormat')).to eq('Invalid referenceCode length')
 		end
 	end
 
 	context 'Invalid reference code length' do
 		it 'Error: Invalid reference code length' do
+			expect(err_bp('chargingLength')).to eq('Invalid referenceCode length')
 		end
 	end
 
