@@ -197,7 +197,8 @@ describe 'CHARGING API' do
 	end
 
 	context 'Invalid Token' do
-		it 'Invalid Token' do
+		it 'Error: App is not provisioned for this rate' do
+			expect(err_bp('chargingToken')).to eq('Invalid Token')
 		end
 	end
 
