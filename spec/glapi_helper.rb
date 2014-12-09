@@ -134,22 +134,22 @@ def err_bp(param)
 		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})
 	when 'endUserId'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => $increment,
-		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		      'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'amount'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
-		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		      'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'referenceCode'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
-		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 
+			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'invalidRate'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
-		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
+			'amount' => "0.50", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'chargingLength'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
-		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
+			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'chargingFormat'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'amount' => "0.00",
-		      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
+			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	end
 	parseBody(response) 
 end
