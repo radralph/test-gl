@@ -190,8 +190,9 @@ describe 'CHARGING API' do
 		end
 	end
 
-	context 'App not provisioned for this rate' do
-		it 'App is not provisioned for this rate' do
+	context 'Invalid Rate' do
+		it 'Error: App is not provisioned for this rate' do
+			expect(err_bp('invalidRate')).to eq('App is not provisioned for this rate')
 		end
 	end
 
