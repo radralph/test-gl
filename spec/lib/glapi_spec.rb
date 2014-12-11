@@ -204,6 +204,7 @@ describe 'CHARGING API' do
 
 	context 'Succesful Charging [token]' do
 		it 'responds with code 201' do
+			expect(charging)
 		end
 	end
 
@@ -228,6 +229,85 @@ describe 'CHARGING API' do
 	end
 
 end
+
+describe 'CHARGING API [bypassed]' do
+
+	context 'Complete and Correct request parameters' do
+		it 'responds with code 201' do
+			expect(charge_bp('ok').code).to eq('201')
+		end
+	end
+
+	context 'Missing endUserId' do
+		it 'Error: Missing parameters: endUserId' do
+			expect(err_bp('endUserId')).to eq('Missing parameters: endUserId')
+		end
+	end
+   
+	context 'Missing amount' do
+		it 'Error: Missing parameters: amount' do 
+			expect(err_bp('amount')).to eq('Missing parameters: amount')
+		end
+	end
+
+	context 'Missing referenceCode' do
+		it 'Error: Missing parameters: referenceCode' do
+			expect(err_bp('referenceCode')).to eq('Missing parameters: referenceCode')
+		end
+	end
+
+	context 'Invalid reference code format' do
+		it 'Error: Invalid Reference code' do
+			expect(err_bp('chargingFormat')).to eq('Invalid referenceCode length')
+		end
+	end
+
+	context 'Invalid reference code length' do
+		it 'Error: Invalid reference code length' do
+			expect(err_bp('chargingLength')).to eq('Invalid referenceCode length')
+		end
+	end
+
+	context 'Invalid Rate' do
+		it 'Error: App is not provisioned for this rate' do
+			expect(err_bp('invalidRate')).to eq('App is not provisioned for this rate')
+		end
+	end
+
+	context 'Invalid Token' do
+		it 'Error: App is not provisioned for this rate' do
+			expect(err_bp('chargingToken')).to eq('Invalid Token')
+		end
+	end
+
+	context 'Succesful Charging [token]' do
+		it 'responds with code 201' do
+			expect(charging)
+		end
+	end
+
+	context 'Insufficient balance [bp]' do
+		it 'GHP subscriber has insufficient balance' do
+		end
+	end
+
+	context 'Insufficient balance [tm]' do
+		it 'TM subscriber has insufficient balance' do
+		end
+	end	
+
+	context 'charging to xtelco' do
+		it '401 error' do
+		end
+	end	
+
+	context 'app is not provisioned for this rate [bp]' do
+		it '401 error' do
+		end
+	end
+	
+end
+
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
 # ░WOW░░░░▌▒█░░░SUCH░░░░▄▀▒▌░░░
