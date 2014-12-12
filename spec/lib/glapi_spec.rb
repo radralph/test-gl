@@ -280,13 +280,7 @@ describe 'CHARGING API [bypassed]' do
 		end
 	end
 
-	context 'Succesful Charging [token]' do
-		it 'responds with code 201' do
-			expect(charging)
-		end
-	end
-
-	context 'Insufficient balance [bp]' do
+	context 'Insufficient balance' do
 		it 'GHP subscriber has insufficient balance' do
 		end
 	end
@@ -305,7 +299,7 @@ describe 'CHARGING API [bypassed]' do
 		it '401 error' do
 		end
 	end
-	
+
 end
 
 
