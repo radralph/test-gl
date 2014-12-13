@@ -204,7 +204,7 @@ describe 'CHARGING API' do
 
 	context 'Succesful Charging [token]' do
 		it 'responds with code 201' do
-			expect(charging)
+			expect(charge_token('ok')).to eq('201')
 		end
 	end
 
