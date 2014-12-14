@@ -156,7 +156,7 @@ describe 'CHARGING API' do
 
 	context 'Complete and Correct request parameters' do
 		it 'responds with code 201' do
-			expect(charge_bp('ok').code).to eq('201')
+			expect(charge('ok').code).to eq('201')
 		end
 	end
 
@@ -204,7 +204,7 @@ describe 'CHARGING API' do
 
 	context 'Succesful Charging [token]' do
 		it 'responds with code 201' do
-			expect(charge_token('ok')).to eq('201')
+			expect(charge('ok')).to eq('201')
 		end
 	end
 
@@ -282,6 +282,7 @@ describe 'CHARGING API [bypassed]' do
 
 	context 'Insufficient balance' do
 		it 'GHP subscriber has insufficient balance' do
+			expect(err_bp('insuff_globe')).to eq('GHP subscriber has insufficient balance')
 		end
 	end
 
