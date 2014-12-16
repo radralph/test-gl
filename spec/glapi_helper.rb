@@ -153,7 +153,9 @@ def err_bp(param)
 	when 'insuff_globe'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => 'test number with insuff load', 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
-	
+	when 'insuff_tm'
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => 'test number with insuff load', 'referenceCode' => $increment,
+			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	end
 	parseBody(response) 
 end

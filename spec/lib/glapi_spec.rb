@@ -288,6 +288,7 @@ describe 'CHARGING API [bypassed]' do
 
 	context 'Insufficient balance [tm]' do
 		it 'TM subscriber has insufficient balance' do
+			expect(err_bp('insuff_tm')).to eq('TM subscriber has insufficient balance')
 		end
 	end	
 
