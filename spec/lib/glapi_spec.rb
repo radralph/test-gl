@@ -218,11 +218,6 @@ describe 'CHARGING API' do
 		end
 	end	
 
-	context 'charging to xtelco' do
-		it '401 error' do
-		end
-	end	
-
 	context 'app is not provisioned for this rate [bp]' do
 		it '401 error' do
 		end
@@ -289,11 +284,6 @@ describe 'CHARGING API [bypassed]' do
 	context 'Insufficient balance [tm]' do
 		it 'TM subscriber has insufficient balance' do
 			expect(err_bp('insuff_tm')).to eq('TM subscriber has insufficient balance')
-		end
-	end	
-
-	context 'charging to xtelco' do
-		it '401 error' do
 		end
 	end	
 
