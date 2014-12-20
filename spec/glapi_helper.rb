@@ -107,14 +107,14 @@ def err(param)
 	
 	###new tests
 	when 'chargingLength'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => 3822100000000001,
-	      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => 3822100000000001,
+	      'transactionOperationStatus' => 'charged'})
 	when 'invalidRate'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'amount' => "0.50", 'referenceCode' => 3822100000000001,
-	      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'referenceCode' => 3822100000000001,
+	      'transactionOperationStatus' => 'charged'})
 	when 'chargingToken'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'amount' => "0.50", 'referenceCode' => 3822100000000001,
-	      'transactionOperationStatus' => 'charged', 'passphrase' => 'globelabsawesome'})
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'referenceCode' => 3822100000000001,
+	      'transactionOperationStatus' => 'charged'})
 	end
 	parseBody(response) 
 end
