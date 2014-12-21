@@ -115,6 +115,9 @@ def err(param)
 	when 'chargingToken'
 		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'referenceCode' => 3822100000000001,
 	      'transactionOperationStatus' => 'charged'})
+	when 'insuff_globe'
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'referenceCode' => 3822100000000001,
+	      'transactionOperationStatus' => 'charged'})
 	end
 	parseBody(response) 
 end

@@ -202,14 +202,9 @@ describe 'CHARGING API' do
 		end
 	end
 
-	context 'Succesful Charging [token]' do
-		it 'responds with code 201' do
-			expect(charge('ok')).to eq('201')
-		end
-	end
-
 	context 'Insufficient balance [bp]' do
 		it 'GHP subscriber has insufficient balance' do
+			expect(err('insuff_globe')).to eq('Invalid Token')
 		end
 	end
 
