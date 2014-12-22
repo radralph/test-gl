@@ -214,11 +214,6 @@ describe 'CHARGING API' do
 		end
 	end	
 
-	context 'app is not provisioned for this rate [bp]' do
-		it '401 error' do
-		end
-	end
-
 end
 
 describe 'CHARGING API [bypassed]' do
