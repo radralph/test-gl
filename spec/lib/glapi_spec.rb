@@ -210,6 +210,7 @@ describe 'CHARGING API' do
 
 	context 'Insufficient balance [tm]' do
 		it 'TM subscriber has insufficient balance' do
+			expect(err('insuff_tm')).to eq('Invalid Token')
 		end
 	end	
 
