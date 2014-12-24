@@ -152,7 +152,7 @@ describe 'SMS API [bypassed app]' do
 
 end
 
-describe 'CHARGING API' do
+describe 'CHARGING API [normal app]' do
 
 	context 'Complete and Correct request parameters' do
 		it 'responds with code 201' do
