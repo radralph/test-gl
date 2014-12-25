@@ -202,7 +202,7 @@ describe 'CHARGING API [normal app]' do
 		end
 	end
 
-	context 'Insufficient balance [bp]' do
+	context 'Insufficient balance [globe]' do
 		it 'GHP subscriber has insufficient balance' do
 			expect(err('insuff_globe')).to eq('Invalid Token')
 		end
