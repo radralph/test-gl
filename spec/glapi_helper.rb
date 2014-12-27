@@ -4,6 +4,8 @@ require 'open-uri'
 
 
 ##Init Vars
+	$insuff_globe = "9062058446"
+	$insuff_tm = "9368723185" 
 	$address = "9175744034"
   	$message = "TEST"
 ##SMS Normal APP
