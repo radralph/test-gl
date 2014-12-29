@@ -118,7 +118,7 @@ def err(param)
 		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $address,'referenceCode' => 3822100000000001,
 	      'transactionOperationStatus' => 'charged'})
 	when 'insuff_globe'
-		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $address,'referenceCode' => 3822100000000001,
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $insuff_globe,'referenceCode' => 3822100000000001,
 	      'transactionOperationStatus' => 'charged'})
 	when 'insuff_tm'
 		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $address, 'referenceCode' => 3822100000000001,
