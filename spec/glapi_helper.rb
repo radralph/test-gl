@@ -121,7 +121,7 @@ def err(param)
 		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $insuff_globe,'referenceCode' => 3822100000000001,
 	      'transactionOperationStatus' => 'charged'})
 	when 'insuff_tm'
-		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $address, 'referenceCode' => 3822100000000001,
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $insuff_tm, 'referenceCode' => 3822100000000001,
 	      'transactionOperationStatus' => 'charged'})
 	end
 	parseBody(response) 
@@ -165,10 +165,10 @@ def err_bp(param)
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'insuff_globe'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => 'test number with insuff load', 'referenceCode' => $increment,
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $insuff_globe, 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'insuff_tm'
-		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => 'test number with insuff load', 'referenceCode' => $increment,
+		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $insuff_tm, 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	end
 	parseBody(response) 
