@@ -260,12 +260,6 @@ describe 'CHARGING API [bypassed]' do
 		end
 	end
 
-	context 'Invalid Token' do
-		it 'Error: App is not provisioned for this rate' do
-			expect(err_bp('chargingToken')).to eq('Invalid Token')
-		end
-	end
-
 	context 'Insufficient balance' do
 		it 'GHP subscriber has insufficient balance' do
 			expect(err_bp('insuff_globe')).to eq('GHP subscriber has insufficient balance')
