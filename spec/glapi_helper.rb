@@ -147,6 +147,9 @@ def err_bp(param)
 		uri.query = $uri.query
 		response = Net::HTTP.post_form(uri, {'address' => $address, 'message' => $message, 'passphrase' => $passphrase})
 	when 'endUserId'
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => $increment,
+		      'transactionOperationStatus' => 'charged', 'passphrase' => ''})
+	when 'endUserId'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'amount' => "0.00", 'referenceCode' => $increment,
 		      'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'amount'
