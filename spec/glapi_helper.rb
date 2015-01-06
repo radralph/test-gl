@@ -177,6 +177,9 @@ def err_bp(param)
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'chargingFormat'
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
+			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
+	when 'chargingFormat'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $address, 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'insuff_globe'
