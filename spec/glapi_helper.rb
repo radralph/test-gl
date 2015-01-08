@@ -189,6 +189,10 @@ def err_bp(param)
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $insuff_globe, 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	when 'insuff_tm'
+		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'endUserId' => $insuff_tm, 'referenceCode' => $increment,
+			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
+	end
+	when 'insuff_tm'
 		response = Net::HTTP.post_form($uricBp, {'description' => 'desc', 'endUserId' => $insuff_tm, 'referenceCode' => $increment,
 			'amount' => "0.00", 'transactionOperationStatus' => 'charged', 'passphrase' => ''})
 	end
