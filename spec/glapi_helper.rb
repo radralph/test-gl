@@ -28,6 +28,9 @@ require 'open-uri'
 	$uricBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 ##xTelco
 	$smart = "9213151819"
+##Staging endpoiints
+	#placeholder only
+	$Suri = URI.parse("http://devapi.globelabs.com.ph/staging/smsmessaging/v1/outbound/3822/requests")
 
 
 def pushSms(param)
