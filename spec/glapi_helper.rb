@@ -31,7 +31,7 @@ require 'open-uri'
 ##Staging endpoints
 	#placeholder only
 	$Suri = URI.parse("http://devapi.globelabs.com.ph/staging/smsmessaging/v1/outbound/3822/requests")
-
+	$Suri.query = "access_token=#{$accessToken}"
 
 def pushSms(param)
 	case param
