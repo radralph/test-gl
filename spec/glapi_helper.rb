@@ -7,6 +7,7 @@ require 'open-uri'
 	$insuff_globe = "9062058446"
 	$insuff_tm = "9368723185" 
 	$address = "9175744034"
+	$smart = "9213151819"
   	$message = "TEST"
 ##SMS Normal APP
 	$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests")
@@ -26,10 +27,7 @@ require 'open-uri'
 	$increment2 = json['result'].last['reference_code'].to_i+1
 	$uricBp = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
 	$uricBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
-##xTelco
-	$smart = "9213151819"
 
-	
 ##Staging endpoints
 	#placeholder only
 	$Suri = URI.parse("http://devapi.globelabs.com.ph/staging/smsmessaging/v1/outbound/3822/requests")
