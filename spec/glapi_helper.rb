@@ -8,6 +8,7 @@ require 'open-uri'
 	$insuff_tm = "9368723185" 
 	$address = "9175744034"
 	$smart = "9213151819"
+	$sun = "9423532715"
   	$message = "TEST"
 ##SMS Normal APP
 	$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests")
