@@ -38,9 +38,6 @@ require 'open-uri'
 	$Suri.query = "access_token=#{$accessToken}"
 
 ##Charging Staging 
-    content = open('').read
-	json = JSON.parse(content)
-	$increment1 = json['result'].last['reference_code'].to_i+1
 	$uric = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
 	$uric.query = "access_token=#{$access_token}"
 
