@@ -76,7 +76,7 @@ describe 'SMS API [normal app]' do
 end
 
 
-describe 'SMS API [bypassed app]' do
+describe 'SMS API [by app]' do
 
 	context 'Complete and Correct request parameters (Globe)' do
 		#it should deduct .50 to developer's wallet
@@ -216,7 +216,7 @@ describe 'CHARGING API [normal app]' do
 
 end
 
-describe 'CHARGING API [bypassed]' do
+describe 'CHARGING API [by]' do
 
 	context 'Complete and Correct request parameters' do
 		it 'responds with code 201' do

@@ -13,7 +13,7 @@ require 'open-uri'
 ##SMS Normal APP
 	$uri = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/7117/requests")
   	$uri.query = "access_token=#{$accessToken}"
-##SMS Bypassed App
+##SMS By App
   	$uriBp = URI.parse("http://devapi.globelabs.com.ph/smsmessaging/v1/outbound/3822/requests")
   	$uriBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 ##Charging Normal APP
@@ -22,7 +22,7 @@ require 'open-uri'
 	$increment1 = json['result'].last['reference_code'].to_i+1
 	$uric = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
 	$uric.query = "access_token=#{$access_token}"
-##Charging Bypassed APP
+##Charging Bp APP
     content = open('http://devapi.globelabs.com.ph/payments/251').read
 	json = JSON.parse(content)
 	$increment2 = json['result'].last['reference_code'].to_i+1
@@ -40,7 +40,12 @@ require 'open-uri'
 ##Charging Staging 
 	$uric = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
 	$uric.query = "access_token=#{$access_token}"
-
+##Charging Bp Staging
+	content = open('http://devapi.globelabs.com.ph/payments/251').read
+	json = JSON.parse(content)
+	$increment2 = json['result'].last['reference_code'].to_i+1
+	$uricBp = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
+	$uricBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 
 def pushSms(param)
 	case param
