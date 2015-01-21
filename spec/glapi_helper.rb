@@ -38,14 +38,11 @@ require 'open-uri'
 	$Suri.query = "access_token=#{$accessToken}"
 
 ##Charging Staging 
-	$uric = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
-	$uric.query = "access_token=#{$access_token}"
+	$Suric = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
+	$Suric.query = "access_token=#{$access_token}"
 ##Charging Bp Staging
-	content = open('http://devapi.globelabs.com.ph/payments/251').read
-	json = JSON.parse(content)
-	$increment2 = json['result'].last['reference_code'].to_i+1
-	$uricBp = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
-	$uricBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
+	$SuricBp = URI.parse("http://devapi.globelabs.com.ph/payment/v1/transactions/amount/")
+	$SuricBp.query = "app_secret=#{$appSecret}&app_id=#{$appId}"
 
 def pushSms(param)
 	case param
