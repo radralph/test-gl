@@ -274,6 +274,14 @@ describe 'CHARGING API [by]' do
 
 end
 
+describe 'INVITE API' do
+
+	##Invite api. pending
+
+
+
+end
+
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
 # ░WOW░░░░▌▒█░░░SUCH░░░░▄▀▒▌░░░
