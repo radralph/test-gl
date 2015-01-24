@@ -282,6 +282,12 @@ describe 'INVITE API' do
 
 end
 
+describe 'LBS' do
+
+	##LBS Use 3822 endpoint
+
+end
+
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
 # ░WOW░░░░▌▒█░░░SUCH░░░░▄▀▒▌░░░
