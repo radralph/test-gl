@@ -233,6 +233,12 @@ def charge_bp(param)
 		      'transactionOperationStatus' => 'charged', 'passphrase' => $passphrase})
 end
 
+
+##LBS
+def lbs(param)
+	##endpoint goes here
+end
+
 def parseBody(response)
 	JSON.parse(response.body)['error']
 end
