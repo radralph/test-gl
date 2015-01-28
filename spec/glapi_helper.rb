@@ -237,6 +237,7 @@ end
 ##LBS
 def lbs(param)
 	##endpoint goes here
+	##http://devapi.globelabs.com.ph/location/v1/queries/location?app_id=pRp7AuEGMMeCp5TrkMcMnGC8kpnkuebo&app_secret=b0fbc79649d31ab3db051530119cd1798b83157eaa88f951cfca5e10d6cf2162&passphrase=globelabsawesome&address=#{address}&requestedAccuracy=100"
 end
 
 def parseBody(response)
