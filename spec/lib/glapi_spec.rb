@@ -274,6 +274,16 @@ describe 'CHARGING API [by]' do
 
 end
 
+describe 'LBS' do
+
+	context 'Successful LBS request' do
+		it "Returns the subscriber's coordinate" do
+			expect(lbs('ok')).to #eq(long and lat not empty)
+		end
+
+end
+
+
 describe 'INVITE API' do
 
 	##Invite api. pending
@@ -282,11 +292,6 @@ describe 'INVITE API' do
 
 end
 
-describe 'LBS' do
-
-	##LBS Use 3822 endpoint
-
-end
 
 describe 'RAVEN [Subscriber Data Query]' do
 
