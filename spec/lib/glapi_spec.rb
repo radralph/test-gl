@@ -280,6 +280,13 @@ describe 'LBS' do
 		it "Returns the subscriber's coordinate" do
 			expect(lbs('ok')).to #eq(long and lat not empty)
 		end
+	end
+
+	context 'Successful LBS request' do
+		it 'missing address parameter' do
+			expect(err_lbs('')).to #400 series
+		end
+	end
 
 end
 
