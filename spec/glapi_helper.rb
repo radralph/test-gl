@@ -137,6 +137,10 @@ def err(param)
 	when 'insuff_tm'
 		response = Net::HTTP.post_form($uric, {'description' => 'desc', 'amount' => "0.50", 'endUserId', => $insuff_tm, 'referenceCode' => 3822100000000001,
 	      'transactionOperationStatus' => 'charged'})
+
+	##LBS
+	when 'lbs_address' 
+
 	end
 	parseBody(response) 
 end
@@ -236,8 +240,11 @@ end
 
 ##LBS
 def lbs(param)
-	res = HTTParty.get("http://devapi.globelabs.com.ph/location/v1/queries/location?access_token=#{token}address=#{address}&requestedAccuracy=100")
-	res.body
+	case param
+	when 'ok'
+		res = HTTParty.get("http://devapi.globelabs.com.ph/location/v1/queries/location?access_token=#{token}address=#{address}&requestedAccuracy=100")
+		res.body
+	end
 end
 
 def parseBody(response)

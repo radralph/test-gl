@@ -288,6 +288,12 @@ describe 'LBS' do
 		end
 	end
 
+	context 'Successful LBS request' do
+		it 'missing access_token' do
+			expect(err_lbs('')).to #400 series
+		end
+	end
+
 end
 
 
