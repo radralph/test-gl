@@ -141,6 +141,9 @@ def err(param)
 	##LBS
 	when 'lbs_address' 
 
+	when 'lbs_token'
+
+	when 'lbs_invalidToken'
 	end
 	parseBody(response) 
 end
