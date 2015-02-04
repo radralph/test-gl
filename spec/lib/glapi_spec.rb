@@ -282,23 +282,30 @@ describe 'LBS' do
 		end
 	end
 
-	context 'Successful LBS request' do
+	context 'Invalid access_token' do
 		it 'invalid access_token' do
 			expect(err_lbs('')).to #400 series
 		end
 	end
 
-	context 'Successful LBS request' do
+	context 'Invalid accuracy' do
+		it 'invalid acuracy' do
+			expect(err_lbs('')).to #400 series
+		end
+	end
+
+	context 'missing address parameter' do
 		it 'missing address parameter' do
 			expect(err_lbs('')).to #400 series
 		end
 	end
 
-	context 'Successful LBS request' do
+	context 'missing access_token' do
 		it 'missing access_token' do
 			expect(err_lbs('')).to #400 series
 		end
 	end
+
 
 end
 
