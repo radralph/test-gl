@@ -144,6 +144,8 @@ def err(param)
 	when 'lbs_token'
 
 	when 'lbs_invalidToken'
+
+	when 'lbs_turnedOff'
 	end
 	parseBody(response) 
 end
