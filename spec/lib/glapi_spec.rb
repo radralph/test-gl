@@ -306,6 +306,12 @@ describe 'LBS' do
 		end
 	end
 
+	context 'cellphone turned off' do
+		it 'reuturn coordinates with a value of zero' do
+			expect(err_lbs('')).to #400 series
+		end
+	end
+
 
 end
 
