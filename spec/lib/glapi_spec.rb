@@ -312,6 +312,11 @@ describe 'LBS' do
 		end
 	end
 
+end
+
+describe 'RAVEN [Subscriber Data Query]' do
+
+	##current load, net promo, other promo
 
 end
 
@@ -325,11 +330,7 @@ describe 'INVITE API' do
 end
 
 
-describe 'RAVEN [Subscriber Data Query]' do
 
-	##current load, net promo, other promo
-
-end
 
 # ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
 # ░WOW░░░░▌▒█░░░SUCH░░░░▄▀▒▌░░░

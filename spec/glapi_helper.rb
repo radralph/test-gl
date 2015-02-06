@@ -252,6 +252,12 @@ def lbs(param)
 	end
 end
 
+##raven
+def raven(param)
+	##HTTParty.get("http://devapi.globelabs.com.ph/location/v1/queries/#{params[:raven]}?access_token=#{session[:access_token]}&address=#{session[:msisdn]}")
+	
+end
+
 def parseBody(response)
 	JSON.parse(response.body)['error']
 end
