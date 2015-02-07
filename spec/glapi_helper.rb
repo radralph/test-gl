@@ -254,7 +254,7 @@ end
 
 ##raven
 def raven(param)
-	##HTTParty.get("http://devapi.globelabs.com.ph/location/v1/queries/#{params[:raven]}?access_token=#{session[:access_token]}&address=#{session[:msisdn]}")
+	res = HTTParty.get("http://devapi.globelabs.com.ph/location/v1/queries/bal?access_token=#{token}&address=#{token}")
 	
 end
 
