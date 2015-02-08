@@ -316,7 +316,11 @@ end
 
 describe 'RAVEN [Subscriber Data Query]' do
 
-	##current load, net promo, other promo
+	context 'Successful query of current load' do
+		it 'Successful query of current load' do
+			expect(raven('')).to #400 series
+		end
+	end
 
 end
 
