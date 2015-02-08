@@ -322,6 +322,12 @@ describe 'RAVEN [Subscriber Data Query]' do
 		end
 	end
 
+	context 'Successful query of subscribed mobile promo' do
+		it 'Successful query of subscribed mobile promo' do
+			expect(raven('')).to #400 series
+		end
+	end
+
 end
 
 
