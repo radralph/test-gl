@@ -254,8 +254,10 @@ end
 
 ##raven
 def raven(param)
-	res = HTTParty.get("http://devapi.globelabs.com.ph/location/v1/queries/bal?access_token=#{token}&address=#{token}")
-	
+	case param
+	when 'ok'
+		res = HTTParty.get("http://devapi.globelabs.com.ph/location/v1/queries/bal?access_token=#{token}&address=#{token}")
+	end
 end
 
 def parseBody(response)
