@@ -328,6 +328,12 @@ describe 'RAVEN [Subscriber Data Query]' do
 		end
 	end
 
+	context 'Query is not available' do
+		it 'Query is not provisioned or invalid' do
+			expect(raven('')).to #400 series
+		end
+	end
+
 end
 
 
