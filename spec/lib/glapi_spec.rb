@@ -334,6 +334,12 @@ describe 'RAVEN [Subscriber Data Query]' do
 		end
 	end
 
+	context 'Missing address' do
+		it 'missing address parameter' do
+			expect(err_raven('')).to #400 series
+		end
+	end
+
 end
 
 
