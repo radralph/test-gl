@@ -346,6 +346,12 @@ describe 'RAVEN [Subscriber Data Query]' do
 		end
 	end
 
+	context 'Invalid access_token' do
+		it 'invalid access_token' do
+			expect(err_raven('')).to #400 series
+		end
+	end
+
 end
 
 
